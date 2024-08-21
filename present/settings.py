@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f7n0)^j-=&z#7&w2nug-27kzge=_mi9)!&t1pccc&bxs_^1@3+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', False)=='True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://present-1.onrender.com','https://code-7.onrender.com']
 
 
 # Application definition
@@ -131,4 +132,3 @@ REST_FRAMEWORK={
     "DEFAULT_PAGINATION_CLASS":"rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE":5,
 }
-CORS_ALLOW_ALL_ORIGINS= True
