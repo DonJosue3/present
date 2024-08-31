@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f7n0)^j-=&z#7&w2nug-27kzge=_mi9)!&t1pccc&bxs_^1@3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', False)=='True'
 
-ALLOWED_HOSTS = ['present-1.onrender.com','code-7.onrender.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['present-1.onrender.com','code-7.onrender.com','localhost:5173','127.0.0.1']
 
 
 # Application definition
@@ -55,10 +55,19 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+
+
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'https://code-7.onrender.com',
+    'http://localhost:5173',
 ]
-
+CORS_ALLOWED_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+    # Add other headers as needed
+]
 ROOT_URLCONF = 'present.urls'
 
 TEMPLATES = [
