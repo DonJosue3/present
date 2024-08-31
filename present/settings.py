@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f7n0)^j-=&z#7&w2nug-27kzge=_mi9)!&t1pccc&bxs_^1@3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', False)=='True'
 
-ALLOWED_HOSTS = ['present-3.onrender.com']
+ALLOWED_HOSTS = ['present-3.onrender.com','localhost:5173','127.0.0.1']
 
 
 # Application definition
@@ -65,6 +65,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOWED_HEADERS = [
     'content-type',
     'authorization',
+    'x-csrftoken',
     # Add other headers as needed
 ]
 ROOT_URLCONF = 'present.urls'
@@ -144,12 +145,3 @@ REST_FRAMEWORK={
     "DEFAULT_PAGINATION_CLASS":"rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE":5,
 }
-CORS_ALLOW_ALL_ORIGIN= True
-CORS_ALLOW_METHODS=[
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS'
-]
