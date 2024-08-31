@@ -59,7 +59,7 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'https://code-7.onrender.com',
+    'https://present-3.onrender.com',
     'http://localhost:5173',
 ]
 CORS_ALLOWED_HEADERS = [
