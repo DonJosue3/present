@@ -65,7 +65,6 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOWED_HEADERS = [
     'content-type',
     'authorization',
-    'x-csrftoken',
     # Add other headers as needed
 ]
 ROOT_URLCONF = 'present.urls'
@@ -145,3 +144,12 @@ REST_FRAMEWORK={
     "DEFAULT_PAGINATION_CLASS":"rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE":5,
 }
+CORS_ALLOW_ALL_ORIGIN= True
+CORS_ALLOW_METHODS=[
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
