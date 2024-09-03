@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f7n0)^j-=&z#7&w2nug-27kzge=_mi9)!&t1pccc&bxs_^1@3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', False)=='True'
 
-ALLOWED_HOSTS = ['present-3.onrender.com','localhost:5173','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -59,9 +59,10 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'https://present-3.onrender.com',
-    'http://localhost:5173',
+    'https://gestion-fm2.onrender.com',
+    'http://localhost:8000',
 ]
+CORS_ALLOW_ALL_ORIGINS=True
 CORS_ALLOWED_HEADERS = [
     'content-type',
     'authorization',
